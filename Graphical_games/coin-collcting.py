@@ -17,7 +17,7 @@ light_gray = (120, 120, 120)
 player_width = 50
 player_height = 50
 player_x = screen_width // 2 - player_width // 2
-player_y = screen_height - player_height - 10
+player_y = screen_height - player_height - 10 # this 10 its because of that the shap has some space with end of the screen
 player_speed = 10
 
 obstacle_width = 100
@@ -77,7 +77,7 @@ while running:
         if coin_y > screen_height:
             coin_x = random.randint(coin_radius, screen_width - coin_radius)
             coin_y = -coin_radius 
-            coin_speed += coin_speed_increase
+            
 
         if player_x < obstacle_x + obstacle_width and player_x + player_width > obstacle_x \
             and player_y < obstacle_y + obstacle_height and player_y + player_height > obstacle_y:
@@ -88,7 +88,8 @@ while running:
             score += 10
             coin_x = random.randint(coin_radius, screen_width - coin_radius)
             coin_y = -coin_radius
-
+            coin_speed += coin_speed_increase
+            
     if dark_mode:
         screen.fill(black)
     else:
@@ -113,7 +114,6 @@ while running:
         pygame.draw.circle(screen, gold, (coin_x, coin_y), coin_radius)
         score_text = normal_font.render(f"Score: {score}", True, light_gray)
         screen.blit(score_text, (10, 10))
-
 
     pygame.display.update()
     clock.tick(60)
