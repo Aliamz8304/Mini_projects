@@ -143,7 +143,7 @@ screen_height = window.winfo_screenheight()
 x_offset = (screen_width // 2) - (window_width // 2)
 y_offset = (screen_height // 2) - (window_height // 2)
 
-window.geometry(f"{window_width}x{window_height}+{x_offset}+{y_offset - 50}") 
+window.geometry(f"{window_width}x{window_height}+{x_offset}+{y_offset - 50}") # این منهای 50 بخاطر اینکه نچسبه به پایین صفحه
 
 window.bind("<Down>", lambda event: change_dirction("down"))
 window.bind("<Up>", lambda event: change_dirction("up"))
